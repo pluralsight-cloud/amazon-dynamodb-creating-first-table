@@ -32,7 +32,7 @@ def query_artist_songs_starting_with(artist, starts_with):
     artist_key = Key('artistName').eq(artist)
     song_title_key = Key('songTitle').begins_with(starts_with)
     response = table.query(
-        KeyConditionExpression= artist_key & song_title_key
+        KeyConditionExpression=artist_key & song_title_key
     )
     print("\nRihanna songs starting with 'D':")
     for item in response.get('Items', []):
